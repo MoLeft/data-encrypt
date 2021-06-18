@@ -13,8 +13,8 @@
     ],
     "require": {
 		"php":">=5.6",
-		"moleft/data-encrypt" : "dev-master"
 	},
+	"minimum-stability": "dev",
 	"autoload":{
 		"psr-4":{
 			"MoLeft\\DataCrypt\\":"src"
