@@ -11,10 +11,8 @@
             "email": "moleft@111.com"
         }
     ],
-    "require": {
-		"php":">=5.6"
-	},
-	"minimum-stability":"dev",
+    "minimum-stability":"dev",
+    "require": {},
 	"autoload":{
 		"psr-4":{
 			"MoLeft\\DataCrypt\\":"src"
