@@ -3,6 +3,7 @@ include './vendor/autoload.php';
 
 use MoLeft\DataCrypt\Config;
 use MoLeft\DataCrypt\Crypt;
+use MoLeft\DataCrypt\DataEncryptException;
 use MoLeft\DataCrypt\Decrypt;
 
 /**
@@ -17,6 +18,12 @@ $config_option = [
 // 创建一个Config实例 
 // 防止设置配置参数不规范,可以使用try..catch来捕获异常
 $config =  new Config($config_option);
+
+// try{
+//     $config =  new Config($config_option);
+// }catch(DataEncryptException $e){
+//     die($e->getMessage());
+// }
 
 // 这是要返回的消息，目前仅支持文本和json
 $data = json_encode(['ret' => '1','msg' => '登陆成功']);
