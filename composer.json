@@ -1,6 +1,5 @@
 {
     "name": "moleft/data-encrypt",
-    "version": "1.0-stable",
     "description": "一个简简单单的信息加密库",
     "keywords": ["RSA","encrypt","crypt"],
     "homepage": "https://github.com/MoLeft/data-encrypt",
@@ -12,8 +11,6 @@
             "email": "moleft@111.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
 		"php":">=5.6"
 	},
