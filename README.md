@@ -7,6 +7,10 @@
 
 # 使用方法
 
+## 安装
+```shell
+
+```
 ## 声明一个配置数组
 
 ```php
@@ -25,12 +29,14 @@ file:需要传入文件地址，建议``绝对路径``
 ## 创建一个Config实例
 
 ```php
+use MoLeft\DataCrypt\Config;
+
 $config =  new Config($config_option);
 ```
 也可以捕获异常
 ```php
+use MoLeft\DataCrypt\Config;
 use MoLeft\DataCrypt\DataEncryptException;
-
 
 try{
     $config =  new Config($config_option);
@@ -55,6 +61,8 @@ $parm = [
 ## 加密
 
 ```php
+use MoLeft\DataCrypt\Crypt;
+
 // 实例化一个加密对象
 $crypt = new Crypt($config);
 // 加密，签名，返回加密好的数据
@@ -64,6 +72,8 @@ $crypt_data = $crypt->crypt($data)->sign($parm)->json();
 ## 解密
 
 ```php
+use MoLeft\DataCrypt\Decrypt;
+
 // 实例化一个解密对象
 $decrypt = new Decrypt($config);
 // 设置解密数据 验签 返回解密数据
