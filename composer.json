@@ -1,0 +1,21 @@
+{
+    "name": "moleft/data-encrypt",
+    "description": "一个简简单单的信息加密库",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MoLeft",
+            "email": "moleft@111.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+		"php":">=5.6"
+	},
+	"autoload":{
+		"psr-4":{
+			"MoLeft\\DataCrypt\\":"src"
+		}
+	}
+}
