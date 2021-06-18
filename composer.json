@@ -1,6 +1,8 @@
 {
     "name": "moleft/data-encrypt",
     "description": "一个简简单单的信息加密库",
+    "keywords": ["RSA","encrypt","crypt"],
+    "homepage": "https://github.com/MoLeft/data-encrypt",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,8 +13,13 @@
     ],
     "minimum-stability": "dev",
     "require": {
-		"php":">=5.6"
+		"php":"^5.6 || ^7.0 || ^8.0"
 	},
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
 	"autoload":{
 		"psr-4":{
 			"MoLeft\\DataCrypt\\":"src"
