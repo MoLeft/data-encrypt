@@ -9,7 +9,7 @@
 
 ## 安装
 ```shell
-
+composer require moleft/data-encrypt
 ```
 ## 声明一个配置数组
 
