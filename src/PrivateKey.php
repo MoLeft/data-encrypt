@@ -22,7 +22,7 @@ class PrivateKey
         $privKeyId = openssl_pkey_get_private($priKey);
         $signature = '';
         openssl_sign($signString, $signature, $privKeyId);
-        openssl_free_key($privKeyId);
+        // openssl_free_key($privKeyId);
         return base64_encode($signature);
     }
 

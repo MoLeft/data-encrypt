@@ -5,7 +5,7 @@ namespace MoLeft\DataCrypt;
 use Exception;
 use MoLeft\DataCrypt\Config;
 
-class Crypt
+class Encrypt
 {
     private $config;
     private $json;
@@ -15,9 +15,9 @@ class Crypt
         $this->config = $config;
     }
 
-    public function crypt($data){
+    public function encrypt($data){
         if(is_array($data)){
-            throw new DataEncryptException('crypt()',30001);
+            throw new DataEncryptException('encrypt()',30001);
         }
         try{
             $this->json['data'] = $this->config->getPrivateKey()->encode($data);
@@ -29,7 +29,7 @@ class Crypt
 
     public function sign($data,$filter = []){
         if(!isset($this->json['data'])){
-            throw new DataEncryptException('crypt()',30006);
+            throw new DataEncryptException('encrypt()',30006);
         }
         if(!is_array($data)){
             throw new DataEncryptException('sign()',30002);
@@ -44,7 +44,7 @@ class Crypt
 
     public function json(){
         if(!isset($this->json['data'])){
-            throw new DataEncryptException('crypt()',30005);
+            throw new DataEncryptException('encrypt()',30005);
         }
         return json_encode($this->json);
     }

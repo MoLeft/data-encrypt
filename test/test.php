@@ -2,7 +2,7 @@
 include './vendor/autoload.php';
 
 use MoLeft\DataCrypt\Config;
-use MoLeft\DataCrypt\Crypt;
+use MoLeft\DataCrypt\Encrypt;
 use MoLeft\DataCrypt\DataEncryptException;
 use MoLeft\DataCrypt\Decrypt;
 
@@ -41,10 +41,10 @@ $parm = [
 /*******************************************************************/
 
 // 实例化一个加密对象
-$crypt = new Crypt($config);
-// 通过crypt()方法将$data加密 再通过sign()方法可以生成一个签名 json()方法返回加密好的数据
-$crypt_data = $crypt->crypt($data)->sign($parm)->json();
-echo "\n\n加密数据：\n{$crypt_data}\n";
+$encrypt = new Encrypt($config);
+// 通过encrypt()方法将$data加密 再通过sign()方法可以生成一个签名 json()方法返回加密好的数据
+$encrypt_data = $encrypt->encrypt($data)->sign($parm)->json();
+echo "\n\n加密数据：\n{$encrypt_data}\n";
 
 
 /*******************************************************************/
@@ -54,5 +54,5 @@ echo "\n\n加密数据：\n{$crypt_data}\n";
 // 实例化一个解密对象
 $decrypt = new Decrypt($config);
 // 通过data()方法设置要解密的数据 再通过verify()方法验证签名(如果没有生成签名可以忽略) decrypt返回解密的数据
-$decrypt_data = $decrypt->data($crypt_data)->verify($parm)->decrypt();
+$decrypt_data = $decrypt->data($encrypt_data)->verify($parm)->decrypt();
 echo "\n\n解密数据：\n{$decrypt_data}\n";

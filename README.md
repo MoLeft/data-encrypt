@@ -61,12 +61,12 @@ $parm = [
 ## 加密
 
 ```php
-use MoLeft\DataCrypt\Crypt;
+use MoLeft\DataCrypt\Encrypt;
 
 // 实例化一个加密对象
-$crypt = new Crypt($config);
+$encrypt = new Encrypt($config);
 // 加密，签名，返回加密好的数据
-$crypt_data = $crypt->crypt($data)->sign($parm)->json();
+$encrypt_data = $encrypt->encrypt($data)->sign($parm)->json();
 ```
 
 ## 解密
@@ -77,14 +77,14 @@ use MoLeft\DataCrypt\Decrypt;
 // 实例化一个解密对象
 $decrypt = new Decrypt($config);
 // 设置解密数据 验签 返回解密数据
-$decrypt_data = $decrypt->data($crypt_data)->verify($parm)->decrypt();
+$decrypt_data = $decrypt->data($encrypt_data)->verify($parm)->decrypt();
 ```
 
 ## 方法说明
 
 1. ``sign()``和``verify()``是签名和验签的方法不是必须的，如果你喜欢也可以签名了不验签，有签名我不验，就是玩~
 
-2. ``Crypt`` 对象最后必须调用``json()``方法来获取加密好的数据，因为我只写了这一种。
+2. ``Encrypt`` 对象最后必须调用``json()``方法来获取加密好的数据，因为我只写了这一种。
 
 3. ``Decrypt`` 对象一定一定要使用``data()``方法设置需要解密的数据，别问为什么，我开心。
 

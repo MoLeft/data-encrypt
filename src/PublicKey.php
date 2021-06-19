@@ -25,7 +25,7 @@ class PublicKey
         $signature_alg=OPENSSL_ALGO_SHA1;
         $publicKeyId = openssl_pkey_get_public($this->public_key);
         $result = openssl_verify($toSign, base64_decode($sign), $publicKeyId, $signature_alg);
-        openssl_free_key($publicKeyId);
+        // openssl_free_key($publicKeyId);
         return $result === 1 ? true : false;
     }
 
